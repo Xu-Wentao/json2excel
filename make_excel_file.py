@@ -2,8 +2,6 @@
 
 import openpyxl
 
-from chongzhi.common.logging import INTERNAL_LOG as LOG
-
 
 def make_excel_file(file_name, sheets: list):
     """
@@ -33,5 +31,4 @@ def make_excel_file(file_name, sheets: list):
         wb.save(filename=file_name)
         return file_name
     except Exception as e:
-        LOG.error(e, exc_info=True)
-        raise
+        raise ValueError(e)
